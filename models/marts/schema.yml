@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: mart_monthly_movie_performance
+    columns:
+      - name: movie_id
+        tests:
+          - not_null
+
+      - name: month
+        tests:
+          - not_null
+
+      - name: location
+        tests:
+          - not_null
+
+      - name: tickets_sold
+        tests:
+          - not_null
+
+      - name: revenue
+        tests:
+          - not_null
+
+      - name: rental_cost
+        description: Monthly rental cost for the movie at the given location (may be null if no invoice exists).
