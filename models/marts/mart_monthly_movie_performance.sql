@@ -34,7 +34,9 @@ select
     ts.location,
     ts.tickets_sold,
     ts.revenue,
-    i.rental_cost
+    i.rental_cost,
+    ts.revenue - coalesce(i.rental_cost, 0) as profit
+
 from ticket_sales ts
 left join movies m
     on ts.movie_id = m.movie_id
